@@ -1,6 +1,12 @@
 let values = {};
 $("form").each(element=>{
-    element.on("submit", event=>{
+    element.on("submit", (f,event) => {
+
+        if(event.submitter.id == "return") {
+            App.Section.slide_to_last_section();
+            return;
+        }
+
         const data = new FormData(element.get());
         for (const [name,value] of data) {
             values[name] = value;

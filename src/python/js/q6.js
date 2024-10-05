@@ -106,8 +106,8 @@ class Q6 {
 
 	on(event, callback) {
 		this._each(element => {
-			element.addEventListener(event, () => {
-				callback(this, event);
+			element.addEventListener(event, (e) => {
+				callback(this, e);
 			});
 		});
 
